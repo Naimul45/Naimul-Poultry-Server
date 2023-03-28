@@ -119,7 +119,7 @@ app.get('/addservice', async (req, res) => {
   const result = await addServiceCollection.find(query).toArray();
   res.send(result)
 })
-app.get('/booking', verifyJWT, async (req, res) => {
+app.get('/booking/:email', verifyJWT, async (req, res) => {
   const email = req.query.email;
   const decodedEmail = req.decoded.email;
 
